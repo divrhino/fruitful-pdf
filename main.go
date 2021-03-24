@@ -17,4 +17,6 @@ func main() {
 		fmt.Println("⚠️  Could not save PDF:", err)
 		os.Exit(1)
 	}
+
+	fmt.Println("PDF saved successfully")
 }
