@@ -55,9 +55,11 @@ func buildHeading(m pdf.Maroto) {
 }
 
 func buildFruitList(m pdf.Maroto) {
+	tableHeadings := []string{"Fruit", "Description", "Price"}
+	contents := [][]string{{"Apple", "Red and juicy", "2.00"}, {"Orange", "Orange and juicy", "3.00"}}
+	lightPurpleColor := getLightPurpleColor()
 
 	m.SetBackgroundColor(getTealColor())
-
 	m.Row(10, func() {
 		m.Col(12, func() {
 			m.Text("Products", props.Text{
@@ -70,6 +72,24 @@ func buildFruitList(m pdf.Maroto) {
 			})
 		})
 	})
+
+	m.SetBackgroundColor(color.NewWhite())
+
+	m.TableList(tableHeadings, contents, props.TableList{
+		HeaderProp: props.TableListContent{
+			Size:      9,
+			GridSizes: []uint{3, 7, 2},
+		},
+		ContentProp: props.TableListContent{
+			Size:      8,
+			GridSizes: []uint{3, 7, 2},
+		},
+		Align:                consts.Left,
+		AlternatedBackground: &lightPurpleColor,
+		HeaderContentSpace:   1,
+		Line:                 false,
+	})
+
 }
 
 func getDarkPurpleColor() color.Color {
@@ -77,6 +97,14 @@ func getDarkPurpleColor() color.Color {
 		Red:   88,
 		Green: 80,
 		Blue:  99,
+	}
+}
+
+func getLightPurpleColor() color.Color {
+	return color.Color{
+		Red:   210,
+		Green: 200,
+		Blue:  230,
 	}
 }
 
