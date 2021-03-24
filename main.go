@@ -20,3 +20,5 @@ func main() {
 
 	fmt.Println("PDF saved successfully")
 }
+
+func buildHeading(m pdf.Maroto) {}
