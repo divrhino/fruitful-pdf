@@ -8,6 +8,8 @@ import (
 	"github.com/johnfercher/maroto/pkg/consts"
 	"github.com/johnfercher/maroto/pkg/pdf"
 	"github.com/johnfercher/maroto/pkg/props"
+
+	"github.com/divrhino/fruitful-pdf/data"
 )
 
 func main() {
@@ -56,7 +58,7 @@ func buildHeading(m pdf.Maroto) {
 
 func buildFruitList(m pdf.Maroto) {
 	tableHeadings := []string{"Fruit", "Description", "Price"}
-	contents := [][]string{{"Apple", "Red and juicy", "2.00"}, {"Orange", "Orange and juicy", "3.00"}}
+	contents := data.FruitList(20)
 	lightPurpleColor := getLightPurpleColor()
 
 	m.SetBackgroundColor(getTealColor())
