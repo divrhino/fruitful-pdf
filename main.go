@@ -22,5 +22,11 @@ func main() {
 }
 
 func buildHeading(m pdf.Maroto) {
-	m.RegisterHeader(func() {})
+	m.RegisterHeader(func() {
+		m.Row(50, func() {
+			m.Col(12, func() {
+
+			})
+		})
+	})
 }
