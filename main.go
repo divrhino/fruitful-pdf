@@ -6,6 +6,7 @@ import (
 
 	"github.com/johnfercher/maroto/pkg/consts"
 	"github.com/johnfercher/maroto/pkg/pdf"
+	"github.com/johnfercher/maroto/pkg/props"
 )
 
 func main() {
@@ -25,7 +26,10 @@ func buildHeading(m pdf.Maroto) {
 	m.RegisterHeader(func() {
 		m.Row(50, func() {
 			m.Col(12, func() {
-
+				m.FileImage("images/logo_div_rhino.jpg", props.Rect{
+					Center:  true,
+					Percent: 75,
+				})
 			})
 		})
 	})
