@@ -23,3 +23,14 @@ func generateFruit() []string {
 
 	return froot
 }
+
+func FruitList(length int) [][]string {
+	var fruits [][]string
+
+	for i := 0; i < length; i++ {
+		ff := generateFruit()
+		fruits = append(fruits, ff)
+	}
+
+	return fruits
+}
