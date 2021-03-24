@@ -26,10 +26,14 @@ func buildHeading(m pdf.Maroto) {
 	m.RegisterHeader(func() {
 		m.Row(50, func() {
 			m.Col(12, func() {
-				m.FileImage("images/logo_div_rhino.jpg", props.Rect{
+				err := m.FileImage("images/logo_div_rhino.jpg", props.Rect{
 					Center:  true,
 					Percent: 75,
 				})
+
+				if err != nil {
+					fmt.Println("Image file was not loaded 😱 - ", err)
+				}
 			})
 		})
 	})
